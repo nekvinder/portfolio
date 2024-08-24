@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="My Arch Linux Rice"
+	description="My Arch Linux Rice"
+	heroImage="../../public/my-os-home.png"
+	pubDate={new Date('2024-08-28')}
+>
+
+<h5 class="text-2xl font-bold mb-4 text-gray-200">Building blocks</h5>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg m-3">
+	<table class="w-full text-sm text-left rtl:text-right text-gray-300 dark:text-gray-300 animate-fade-in">
+		<tbody>
+			{[
+				{ label: "Distribution", value: "Arch Linux" },
+				{ label: "Window Manager", value: "i3WM with Compton Compositor" },
+				{ label: "Dock bar on top", value: "Polybar" },
+				{ label: "IDE", value: "NeoVim" },
+				{ label: "Shell", value: "ZSH with Oh-my-zsh" },
+				{ label: "Terminal", value: "Tmux on Alacritty" },
+				{ label: "Browser", value: "Firefox" },
+				{ label: "App Launcher", value: "Rofi" },
+				{ label: "Clipboard Manager", value: "copyq" },
+				{ label: "Notifications", value: "Dunst" }
+			].map((item ) => (
+				<tr class="bg-gray-800 border-b border-gray-700 hover:bg-gray-700 transition-colors duration-200">
+					<td class="px-6 py-4 font-medium text-gray-200">{item.label}</td>
+					<td class="px-6 py-4">{item.value}</td>
+				</tr>
+			))}
+		</tbody>
+	</table>
+</div>
+
+<style>
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	.animate-fade-in {
+		animation: fadeIn 0.5s ease-in-out;
+	}
+
+	@media (max-width: 640px) {
+		table {
+			font-size: 0.8rem;
+		}
+		td {
+			padding: 0.5rem !important;
+		}
+	}
+</style>
+</Layout>
