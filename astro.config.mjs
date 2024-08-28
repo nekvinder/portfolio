@@ -8,10 +8,10 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://nekvinder.com",
+  site: "https://nekvinder.github.io",
   integrations: [mdx(), sitemap(), tailwind(), icon()],
   output: "server",
   adapter: node({
-    mode: "standalone"
-  })
+    mode: "standalone",
+  }),
 });
