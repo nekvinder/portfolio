@@ -8,7 +8,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://nekvinder.github.io",
+  site: "https://nekvinder.com",
   integrations: [mdx(), sitemap(), tailwind(), icon()],
   output: "server",
   adapter: node({
