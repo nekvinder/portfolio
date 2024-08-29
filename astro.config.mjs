@@ -9,5 +9,4 @@ import icon from "astro-icon";
 export default defineConfig({
   site: "https://nekvinder.com",
   integrations: [mdx(), sitemap(), tailwind(), icon()],
-  output: "static",
 });
