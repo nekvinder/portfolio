@@ -1,87 +1,58 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import {Icon} from 'astro-icon/components';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import DarkModeToggle from "./DarkModeToggle.astro";
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/workstation">My Workstation</HeaderLink>
-			<HeaderLink href="/my-os">My OS</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-		</div>
-		<div class="social-links">
-			<a href="https://www.linkedin.com/in/nekvinder-singh-61b5b915a/" target="_blank">
-				<span class="sr-only">Follow me on LinkedIn</span>
-				<Icon name="mdi:linkedin" size="34" />
-			</a>
-			<a href="https://github.com/nekvinder" target="_blank">
-				<span class="sr-only">Go to Astro's GitHub repo</span>
-				<Icon name="mdi:github" size="34" />
-			</a>
-		</div>
-	</nav>
+  <a
+    class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
+    href="#main"
+  >
+    Skip to content
+  </a>
+  <nav>
+    <section class="text-text-bold">
+      <ul class="unset flex gap-4 [&>li]:p-0">
+        <li><HeaderLink href="/">Home</HeaderLink></li>
+        <li><HeaderLink href="/blog">Blog</HeaderLink></li>
+        <li><HeaderLink href="/projects">Projects</HeaderLink></li>
+      </ul>
+    </section>
+  </nav>
+  <div
+    class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold"
+  >
+    <a
+      class="unset text-xl ml-4 hover:text-text-link"
+      href="https://github.com/flexdinesh/blogster"
+    >
+      <i
+        class="fa-brands fa-github"
+        aria-hidden="true"
+        title="Blogster on GitHub"></i>
+      <span class="fa-sr-only">Blogster on GitHub</span>
+    </a>
+    <a
+      class="unset text-xl ml-4 hover:text-text-link"
+      href="https://twitter.com/flexdinesh"
+    >
+      <i
+        class="fa-brands fa-twitter"
+        aria-hidden="true"
+        title="Dinesh on Twitter"></i>
+      <span class="fa-sr-only">Dinesh on Twitter</span>
+    </a>
+  </div>
+  <DarkModeToggle />
 </header>
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-		transition: all 0.3s ease;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-wrap: wrap;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--white);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-		transition: border-bottom-color 0.3s ease;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	.social-links a {
-		transition: transform 0.3s ease;
-	}
-	.social-links a:hover {
-		transform: scale(1.1);
-	}
-	@media (max-width: 720px) {
-		nav {
-			flex-direction: column;
-			align-items: flex-start;
-		}
-		.internal-links {
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-		}
-		.social-links {
-			margin-top: 1em;
-			justify-content: center;
-			width: 100%;
-		}
-	}
+  header {
+    grid-area: header;
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(
+        0,
+        max-content
+      );
+  }
 </style>
