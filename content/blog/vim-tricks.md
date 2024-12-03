@@ -1,6 +1,6 @@
 ---
 external: false
-title: "VIM Tricks"
+title: "VIM Recommendations"
 description: "asdasd"
 date: 2024-12-02
 heroImage: "../../my-os-home.png"
@@ -11,6 +11,8 @@ heroImage: "../../my-os-home.png"
 - Use gnu stow to manage dotfiles
 
 ### GIT
+
+- Use toggleTerm with lazygit for quick actions with git repos, branches, commit views.
 
 ##### DiffviewFileHistory
 
@@ -28,7 +30,7 @@ heroImage: "../../my-os-home.png"
 ### Angular
 
 Angular has components, which usually have a .ts, .html, .css/scss and spec files.
-Use the following keybind to alternate/rotate between the same components files.
+Use the following function to alternate/rotate between the same components files.
 
 ```lua
 function()
