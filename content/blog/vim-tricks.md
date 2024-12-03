@@ -16,7 +16,7 @@ heroImage: "../../my-os-home.png"
 
 ##### DiffviewFileHistory
 
-- Don't just git blame, as it often shows reformatted and only the latest changes author.
+- To find code author : Don't git blame, as it often shows reformatted and only the latest changes author.
 - When in need to find the who actually put in the change in a particular file, the following is useful:
 
 ```lua
